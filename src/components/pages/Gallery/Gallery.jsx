@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { catchError, getGalleryItems } from "../../../utils/apiLink/apiLink";
 import GalleryItem from "../../shared/GalleryItem/GalleryItem";
+import './Gallery.scss'
 
 const Gallery = () => {
 
@@ -29,20 +30,25 @@ const Gallery = () => {
   }
 
   return ( 
-    <>
+    <section className="gallery_section">
     <h1>Gallery</h1>
-    {page >= 2 && <button onClick={() => setPage(prevPage => prevPage - 1)}>{page - 1}</button>}
+    <div className="btn_wrapper">
+    {page >= 2 && <button onClick={() => setPage(prevPage => prevPage - 1)}>previous page</button>}
     
-    <button style={{color: "red"}}>{page}</button>
-    <button onClick={() => setPage(prevPage => prevPage + 1)}>{page + 1}</button>
-    <select name="show_items_counter" id="show_items_counter" onChange={(event) => setItemsOnPage(event.target.value)}>
+      <button className="active_page">{page}</button>
+      <button onClick={() => setPage(prevPage => prevPage + 1)}>next page</button>
+      <label htmlFor="show_items_counter">items on page: </label>
+      <select name="show_items_counter" id="show_items_counter" onChange={(event) => setItemsOnPage(event.target.value)}>
       <option value="12">12</option>
       <option value="24">24</option>
       <option value="36">36</option>
       <option value="48">48</option>
     </select>
+    </div>
+    <div className="gallery_items_wrapper">
     {gallery.map(painting => <GalleryItem key={painting.id} painting={painting}/>)}
-    </>
+    </div>
+    </section>
   );
 }
 

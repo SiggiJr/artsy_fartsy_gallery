@@ -1,0 +1,32 @@
+.gallery_item{
+  display: grid;
+  flex-direction: column;
+  row-gap: 20px;
+  justify-content: space-between;
+  .img_wrapper{
+    display: flex;
+    align-items: center;
+    img{
+      max-width: 100%;
+      max-height: 60%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      box-shadow: 0 0 10px 5px gray;
+      transition: box-shadow .2s ease-in;
+      &:hover{
+        box-shadow: 0 0 15px 10px gray;
+      }
+    }
+  }
+    .information_wrapper{
+      height: fit-content;
+      align-self: flex-end;
+      row-gap: 10px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      >*:nth-child(2n){
+        text-align: right;
+      }
+  }
+}

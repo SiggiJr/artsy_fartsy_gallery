@@ -7,13 +7,13 @@ import PaintingDetails from './components/shared/PaintingDetails/PaintingDetails
 function App() {
 
   return (
-    <>
+    <main>
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/gallery' element={<Gallery/>}/>
       <Route path='/painting/:id' element={<PaintingDetails/>}/>
     </Routes>
-    </>
+    </main>
   )
 }
 

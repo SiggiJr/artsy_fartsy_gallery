@@ -1,0 +1,24 @@
+.home_section{
+  height: 100vh;
+  background-image: url("../../../assets/img/gallery_background.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+align-items: center;
+row-gap: 20px;
+  flex-direction: column;
+  h1{
+    font-size: 3rem;
+    padding-top: 260px;
+  }
+  a{
+    color: #10766b;
+    text-decoration: none;
+    font-size: 2rem;
+    margin-inline: auto;
+    display: inline-block;
+  }
+  a:hover{
+    text-shadow: 0 0 5px #0a524b;
+  }
+}

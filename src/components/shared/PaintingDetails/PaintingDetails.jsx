@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { catchError, getPaintingDetails } from "../../../utils/apiLink/apiLink";
+import './PaintingDetails.scss'
 
 import defaultImg from '../../../assets/img/error.jpg'
 
@@ -30,13 +31,20 @@ const PaintingDetails = () => {
 
   return ( 
     <section className="detailed_painting">
-      <img src={imgLink} alt={paintingDetails.title} />
       <h2>{paintingDetails.title}</h2>
-      <h3>{paintingDetails.artist_title}</h3>
-      <p>{`finished ${paintingDetails.date_end}`}</p>
-      <p>{paintingDetails.place_of_origin}</p>
-      <p>{paintingDetails.style_title}</p>
-      <p>{paintingDetails.artwork_type_title}</p>
+      <img src={imgLink} alt={paintingDetails.title} />
+      <div className="information_wrapper">
+        <h3>By</h3>
+        <h3>{paintingDetails.artist_title}</h3>
+        <p>finished</p>
+        <p>{paintingDetails.date_end}</p>
+        <p>Origin</p>
+        <p>{paintingDetails.place_of_origin}</p>
+        <p>Style</p>
+        <p>{paintingDetails.style_title}</p>
+        <p>Artwork type</p>
+        <p>{paintingDetails.artwork_type_title}</p>
+      </div>
     <button onClick={() => navigator(-1)}>Back to Gallery</button>
     </section>
   );
