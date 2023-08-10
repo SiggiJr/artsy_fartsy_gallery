@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import defaultImg from '../../../assets/img/error.jpg'
+
 import './GalleryItem.scss'
 
 const GalleryItem = ({painting}) => {
